@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Login successfull."
-	   	redirect_to root_url
+      redirect_to root_url
     else
       redirect_to :action => 'new'
     end
