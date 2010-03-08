@@ -10,3 +10,8 @@ Options :
 h3. Licence / License
 
 This work is released under the MIT License (see LICENSE file).
+
+
+h3. AuthLogic
+
+For some more details or to tweak around be sure to check the awesome thing used by this generator : AuthLogic. http://github.com/binarylogic/authlogic
