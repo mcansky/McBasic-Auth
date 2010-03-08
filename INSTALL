@@ -25,4 +25,12 @@ def current_user
 	@current_user = current_user_session && current_user_session.record
 end
 
+Finally you are going to need to add some gem requirements to your app :
+
+# Rails 2.3.* (in environment.rb)
+  config.gem "authlogic"
+
+# Rails 3 (in Gemfile)
+gem "authlogic", :git => "git://github.com/binarylogic/authlogic.git"
+
 You should then run a rake db:migrate.
