@@ -1,0 +1,12 @@
+h2. mc basic auth generator
+
+This generator is intended to generate (rly!) a basic authentication system based on AuthLogic. It creates a User model and UserSession model with the according basic controllers, views and migration.
+
+Options :
+	--skip-views : doesn't generate the User Controller views
+	--skip-user-controller : doesn't generate the UserController
+
+
+h3. Licence / License
+
+This work is released under the MIT License (see LICENSE file).

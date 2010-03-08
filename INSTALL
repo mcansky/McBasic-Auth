@@ -1,0 +1,28 @@
+McBasic Auth Generator
+
+After running the generator you should have at least the user, user_session models and user_session controller.
+To make it handy you can add the following routes to your routes.rb file :
+
+# Rails 2.3.*
+	map.login "login", :controller => "user_sessions", :action => "new"
+	map.logout "logout", :controller => "user_sessions", :action => "destroy"
+	map.signup "signup", :controller => "users", :action => "new"
+
+# Rails 3
+	match "/logout" => 'user_sessions#destroy', :as => "logout"
+	match "/login" => 'user_sessions#new', :as => "login"
+	match "/signup" => 'users#new', :as => "signup"
+
+You also probably want to add the following methods to your App Controller :
+
+def current_user_session
+	return @current_user_session if defined?(@current_user_session)
+	@current_user_session = UserSession.find
+end
+
+def current_user
+	return @current_user if defined?(@current_user)
+	@current_user = current_user_session && current_user_session.record
+end
+
+You should then run a rake db:migrate.
